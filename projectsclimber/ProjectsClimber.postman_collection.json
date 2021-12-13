@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "73437612-5910-42b6-b2fe-245969ad3f27",
+		"name": "ProjectsClimber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nametest\",\r\n    \"surname\": \"surnametest\",\r\n    \"email\": \"emailtest@gmail.com\",\r\n    \"password\": \"passwordtest\",\r\n    \"city\": \"Resistencia\",\r\n    \"province\": \"Chaco\",\r\n    \"country\": \"Argentina\",\r\n    \"userType\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "resistencia",
+									"disabled": true
+								},
+								{
+									"key": "creationDate",
+									"value": "2021-12-02",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "nametest",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passwordtest25",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"555name555\",\r\n    \"surname\": \"surname555\",\r\n    \"email\": \"email555@gmail.com\",\r\n    \"password\": \"newpassword555\",\r\n    \"city\": \"city555\",\r\n    \"province\": \"province555\",\r\n    \"country\": \"cuntry555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nametest\",\r\n    \"description\": \"descriptiontest\",\r\n    \"content\": \"contenttest\",\r\n    \"objetive\": 120000,\r\n    \"posted\": true,\r\n    \"url\": \"url1, url2, url3, url4\",\r\n    \"tags\": [ \r\n        { \"name\": \"tag1\"}, \r\n        { \"name\": \"tag2\"}, \r\n        { \"name\": \"tag3\"}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/14/project",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"14",
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								""
+							],
+							"query": [
+								{
+									"key": "posted",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "posted",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "tag1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nametest\",\r\n    \"description\": \"descriptiontest\",\r\n    \"content\": \"content\",\r\n    \"objetive\": 120000,\r\n    \"posted\": true,\r\n    \"url\": \"url\",\r\n    \"tags\": [ \r\n        { \"name\": \"tag1\"}, \r\n        { \"name\": \"tag2\"}, \r\n        { \"name\": \"tag3\"}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "Create Vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generatedFrom\": \"mobile\",\r\n    \"idUser\": 15,\r\n    \"idProject\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vote",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vote",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vote"
+							],
+							"query": [
+								{
+									"key": "idUser",
+									"value": "15",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"details\": \"detailstest\",\r\n    \"closedData\": \"21-12-24\",\r\n    \"status\": \"IN_PROGRESS\",\r\n    \"reward\": 100000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/event",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"details\": \"detailstest\",\r\n    \"closedData\": \"21-12-24\",\r\n    \"status\": \"FINALIZED\",\r\n    \"reward\": 22000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/event/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/event/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/event/1/project/13",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event",
+								"1",
+								"project",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
